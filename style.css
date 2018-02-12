@@ -1,0 +1,38 @@
+body {
+
+    background-color: rgb(242, 238, 184);
+
+}
+
+#formu li 
+{
+    list-style-type:none;
+    height:50px;
+    width: 200px;
+}
+
+#boton {
+ position: relative;
+ top: 20px;
+
+}
+
+#boton2 {
+    position: relative;
+    right: 20px;
+}
+
+#body {
+    background-color: rgb(151, 237, 168); 
+}
+
+#formulario li {
+    list-style-type:none;
+
+}
+
+#table {
+
+    right: 20px;
+}
+
