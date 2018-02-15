@@ -1,11 +1,8 @@
 <?php
 
-$datos_conexion=mysqli_connect("localhost", "root", "", "formulario");
+$db_connection = mysqli_connect("localhost", "enzo", "enzo", "enzo");
 
-$host = "localhost";
-$user = "root";
-$pw = "";
-$db = "formulario";
+$mysqli = new mysqli("localhost", "enzo", "enzo", "enzo");
 
 
 ?>

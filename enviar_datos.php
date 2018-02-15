@@ -12,7 +12,7 @@
 
     include("conexion.php");
 
-mysqli_query($datos_conexion, "INSERT INTO formulario VALUES (0,'$usuario', '$password' )");
+mysqli_query($db_connection, "INSERT INTO formulario VALUES (0,'$usuario', '$password' )");
 
 header("Location: mensaje_enviado.php");
 

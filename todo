@@ -1,0 +1,30 @@
+LISTAR USUARIOS
+
+$usuarios = $usuariosDB->listar(); // SELECT * from usuarios
+
+OBTENER USUARIO
+
+$usuario = $usuariosDB->get($id); // SELECT * FROM usuarios where id_usuario = $id;
+
+ACTUALIZAR USUARIO
+
+$usuario = $usuariosDB->get($id); 
+
+$usuario.setEmail('nuevo@nuevo.com');
+
+$usuario->update();
+
+ELIMINAR USUARIO
+
+$usuario->delete($id);
+
+
+===========================
+Programacion orientada a objectos
+Clases en php
+    herencia
+    atributos
+    metodos
+    constructores
+
+

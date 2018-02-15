@@ -5,7 +5,7 @@
     require 'conexion.php';
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
-    $resultado = mysqli_query($datos_conexion, 'SELECT * FROM login WHERE usuario="'.$usuario.'" and password="'.$password.'"');
+    $resultado = mysqli_query($db_connection, 'SELECT * FROM login WHERE usuario="'.$usuario.'" and password="'.$password.'"');
     }
 
     if(mysqli_num_rows($resultado)==1) {

@@ -1,23 +1,21 @@
 <?php
-include("conexion.php");
-$db_connection = mysqli_connect("localhost", "root", "", "formulario");
-$nombre2 = $_POST['nombre2'];
-$email2 = $_POST['email2'];
-$pass2 = $_POST['pass2'];
-$id = ['id_usuario'];
-///BASE DE DATOS///
+include("modelos/usuario.php");
+$config = include('config.php');
+$usuarioDB = new Usuario($config['mysql']);
 
-$resu = "UPDATE `usuarios` SET `id_usuarios`='$id',  `nombre`='$nombre', `email`='$email', `pass`='$pass'
-WHERE `id_usuario`= '$id'";
+$id = $_GET['id'];
+$data = [
+  'nombre' => $_POST['nombre'],
+  'email' => $_POST['email'],
+  'pass' => $_POST['pass']
+];
 
-$con = $db_connection -> query($resu);
+$resultado = $usuarioDB->update($id, $data);
 
-if ($resu) {
-
-    header("Location: tabla.php");
-}
-else {
-    echo "error";
-}
+if ($resultado === false) {
+  echo "Actualizacion fallida";
+}else{
+  header("Location: tabla.php");
+}   
 
 ?>

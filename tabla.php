@@ -1,5 +1,8 @@
 <?php
- $conexion = mysqli_connect("localhost", "root", "", "formulario");
+include("modelos/usuario.php");
+$config = include('config.php');
+
+$usuarioDB = new Usuario($config['mysql']);
 
 ?>
 
@@ -31,24 +34,18 @@
 
 </tr>
 <?php
-$sql="SELECT * FROM usuarios";
-$result=mysqli_query($conexion,$sql);
+$usuarios = $usuarioDB->listar();
 
-while($mostrar=mysqli_fetch_array($result)){
-
-
-
+for ($i=0; $i < count($usuarios); $i++) { 
 
 ?>
 <tr>
-<td> <?php echo $mostrar['id_usuario'] ?> </td>
-<td> <?php echo $mostrar['nombre'] ?> </td>
-<td> <?php echo $mostrar['email'] ?> </td>
-<td> <?php echo $mostrar['pass'] ?> </td>
-<td> <a href="modificar.php?id<?php echo $mostrar['id_usuario']; ?>" > Modificar </a> </td>
-<td> <a href="eliminar.php?id<?php echo $mostrar['id_usuario']; ?>" > Eliminar </a> </td>
-
-
+  <td> <?php echo $usuarios[$i]['id_usuario'] ?> </td>
+  <td> <?php echo $usuarios[$i]['nombre'] ?> </td>
+  <td> <?php echo $usuarios[$i]['email'] ?> </td>
+  <td> <?php echo $usuarios[$i]['pass'] ?> </td>
+  <td> <a href="modificar.php?id=<?php echo $usuarios[$i]['id_usuario']; ?>" > Modificar </a> </td>
+  <td> <a href="eliminar.php?id=<?php echo $usuarios[$i]['id_usuario']; ?>" > Eliminar </a> </td>
 </tr>
 <?php
 }
