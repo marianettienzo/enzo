@@ -38,9 +38,9 @@ class Usuario {
     }
 
     /** GUARDAR UN NUEVO USUARIO */
-    public function save($id, $data) {
+    public function save($data) {
         $stmt = $this->mysql->prepare("INSERT INTO usuarios(id_usuario, nombre, email, pass) VALUES (NULL,?, ?, ? ");
-        $stmt->bind_param("sssi", $data['nombre'], $data['email'], $data['pass'], $id);
+        $stmt->bind_param("sss", $data['nombre'], $data['email'], $data['pass']);
         return $stmt->execute();
     }
 
