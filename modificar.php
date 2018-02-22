@@ -11,31 +11,27 @@ include("conexion.php");
 <body id="body">
 <a href="tabla.php">Volver</a>
 <h1>  </h1>
+
 <?php
+include("modelos/usuario.php");
+$config = include('config.php');
+$usuarioDB = new Usuario($config['mysql']);
 
 $id = $_GET['id'];
+$data = [
+  'nombre' => $_POST['nombre'],
+  'email' => $_POST['email'],
+  'pass' => $_POST['pass']
+];
 
+$resultado = $usuarioDB->get($id);
 
-//MYSQL PREPARED STATEMENTS
+if ($resultado === false) {
+  echo "Actualizacion fallida";
+}else{
+  header("Location: tabla.php");
+}   
 
-/* Prepared statement, stage 1: prepare */
-if (!($stmt = $mysqli->prepare("SELECT * FROM usuarios WHERE id_usuario = ? "))) {
-  echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
-}
-
-/* Prepared statement, stage 2: bind and execute */
-if (!$stmt->bind_param("i", $id)) {
-    echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
-}
-
-
-if (!$stmt->execute()) {
-  echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-}
-
-
-$res = $stmt->get_result();
-$usuario = $res->fetch_assoc();
 
 if(!empty($usuario)) {
 
