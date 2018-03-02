@@ -18,22 +18,17 @@ $config = include('config.php');
 $usuarioDB = new Usuario($config['mysql']);
 
 $id = $_GET['id'];
-$data = [
-  'nombre' => $_POST['nombre'],
-  'email' => $_POST['email'],
-  'pass' => $_POST['pass']
-];
+$usuario = $usuarioDB->get($id);
 
-$resultado = $usuarioDB->get($id);
-
-if ($resultado === false) {
+if ($usuario === false) {
   echo "Actualizacion fallida";
 }else{
-  header("Location: tabla.php");
-}   
-
+ header ("Location tabla.php");
+}
 
 if(!empty($usuario)) {
+
+  
 
   ?>
 <form action="modificar_progreso.php?id=<?php echo $usuario['id_usuario']?>" method="POST">

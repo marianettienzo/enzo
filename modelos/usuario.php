@@ -1,23 +1,29 @@
 <?php
 class Usuario {
+    
     private $mysql;
+
     public function  __construct($mysql) {
         $this->mysql = $mysql;
      } 
+
     public function listar() {
+
         $stmt = $this->mysql->prepare("SELECT * FROM usuarios");
-        $stmt->execute();
-        
+        $stmt->execute();        
         $res = $stmt->get_result();
+
         $usuarios = []; // array()
+
         while($row = $res->fetch_assoc()){
             array_push($usuarios,$row);
         }
+        
         return $usuarios;
     }
     /** OBTENER UN USUARIO POR SU ID */
      public function get($id) {
-        $stmt = $this->mysqli->prepare("SELECT FROM usuarios WHERE id_usuario = ? LIMIT 1");
+        $stmt = $this->mysql->prepare("SELECT * FROM usuarios WHERE id_usuario = ? LIMIT 1");
         $stmt->bind_param("i", $id); 
         $stmt->execute();
         $res = $stmt->get_result();
@@ -44,4 +50,5 @@ class Usuario {
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
+    
 }
