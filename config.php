@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'mysql' => new mysqli("localhost", "root", "", "formulario")
+    'mysql' => new mysqli("localhost", "enzo", "enzo", "enzo")
 ];
