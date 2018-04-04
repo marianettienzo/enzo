@@ -1,3 +1,10 @@
+<?php
+include("sesioncheck.php");
+include("navbar.php");
+
+?>
+
+
 <html>
 <head>
 <title> Prueba </title>
@@ -11,25 +18,7 @@
 <meta charser="utf-8">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-   <span class="navbar-toggler-icon"></span>
- </button>
 
- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-   <ul class="navbar-nav mr-auto">
-     <li class="nav-item active">
-       <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link" href="formulario.php">Formulario</a>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link disabled" href="tabla.php">Tabla</a>
-     </li>
-   </ul>
- </div>
-</nav>
 
 <h1 id="h2"> Insertar nuevo usuario </h1>
 <form action="registro.php" method="POST">
