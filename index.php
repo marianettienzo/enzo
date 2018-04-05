@@ -1,28 +1,4 @@
 <html>
-
-<?php
-include("navbar.php");
-include("sesioncheck.php");
-    if(isset($_POST['login'])) {
-    require 'conexion.php';
-    $usuario = $_POST['usuario'];
-    $password = $_POST['password'];
-    $resultado = mysqli_query($db_connection, 'SELECT * FROM login WHERE usuario="'.$usuario.'" and password="'.$password.'"');
-    }
-
-    if(mysqli_num_rows($resultado)==1) {
-        $_SESSION['usuario'] = $usuario;
-        header("Location: mensaje_enviado.php");
-    }
-
-    ?>
- 
-    
-
-    
-  
-  
-
 <head>
 <title> Prueba </title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,12 +9,14 @@ include("sesioncheck.php");
 <meta charser="utf-8">
 </head>
 <body>
+<?php include("navbar.php"); ?>
+
 <h1> Inicio de Sesión  </h1>
 </ul>
     <div id="formulario">
-<form method="POST">
+<form method="POST" action="login.php">
 <ul id="formu">
-<li> Usuario: <input type="text" name="usuario" required class="form-control" style="width : 250px; heigth : 0.5px"   placeholder="Nombre" </li>
+<li> Email: <input type="text" name="email" required class="form-control" style="width : 250px; heigth : 0.5px"   placeholder="Email" </li>
 <li> Password  <input type="password" name="password" required class="form-control" style="width : 250px; heigth : 0.5px"  placeholder="Password" </li>
  
 <input id="boton" type="submit" name="login"  class="btn btn-success"  </li>

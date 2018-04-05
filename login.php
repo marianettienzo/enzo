@@ -9,17 +9,16 @@ if(isset($email) && isset($password)) {
 
 
     $stmt = $config['mysql']->prepare("SELECT * FROM usuarios WHERE email = ? and pass = ? LIMIT 1");
-    $stmt->bind_param("ss", $usuario, $password); 
-    $resultado = $stmt->execute();
+    $stmt->bind_param("ss", $email, $password); 
+    $stmt->execute();
     $res = $stmt->get_result();
     $result = $res->fetch_assoc();
 
-  
     if($result) {
         $_SESSION['usuario'] = $result;
-        //header("Location: mensaje_enviado.php");
+        header("Location: mensaje_enviado.php");
     }else{
-        //header("Location: index.php");
+        header("Location: index.php");
     }
 
 }else{

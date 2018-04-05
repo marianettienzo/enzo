@@ -1,7 +1,4 @@
-<?php 
-include("navbar.php");
-include("sesioncheck.php");
-?>
+<?php include("sesioncheck.php"); ?>
 
 <html>
 
@@ -17,12 +14,9 @@ include("sesioncheck.php");
 <link rel="stylesheet" href="estilo/style.css" type="text/css"> 
 </head>
 <body id="body">
-<?php echo 'Bienvenido'.$_SESSION['usuario']; ?>
-<?php echo '<br><a href="salir.php?action=logout">Logout</a>'; ?>
+<?php include("navbar.php");  ?>
+<p> Bienvenido! <?php echo $_SESSION['usuario']['email']; ?></p>
 <p> Usted ha sido registrado con éxito! </p>
-<input type="button" class="btn btn-primary" onclick="location.href='index.php';" value="Inicio"  />
-
-
    
 </body>
 

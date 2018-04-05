@@ -16,6 +16,9 @@
      <li class="nav-item">
        <a class="nav-link disabled" href="tabla.php">Tabla</a>
      </li>
+     <li class="nav-item">
+       <a class="nav-link" href="salir.php">Logout</a>
+     </li>
    </ul>
  </div>
 </nav>
