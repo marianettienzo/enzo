@@ -1,7 +1,0 @@
-session_start();  
-$logueado = 1;
-if ($_SESSION['logueado']) {  
- header ("Location: mensaje_enviado.php"); 
-}
-  else {   header ("Location: index.php"); 
-  }
