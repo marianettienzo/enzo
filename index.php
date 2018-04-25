@@ -14,20 +14,25 @@ $objetoAuth = new Auth($_SESSION);
 </head>
 <body>
 <?php include("navbar.php"); ?>
+ <div>  
+ <h1 class="text-primary"> Inicio de Sesion </h1>
+ </div>
 
-<h1> Inicio de Sesión  </h1>
+
 </ul>
-    <div id="formulario">
 <form method="POST" action="login.php">
-<ul id="formu">
-<li> Email: <input type="text" name="email" required class="form-control" style="width : 250px; heigth : 0.5px"   placeholder="Email" </li>
-<li> Password  <input type="password" name="password" required class="form-control" style="width : 250px; heigth : 0.5px"  placeholder="Password" </li>
- 
-<input id="boton" type="submit" name="login"  class="btn btn-success"  </li>
-
-</ul>
+<div class="mx-auto" style="width: 200px;">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-white bg-dark">EMAIL ADDRESS</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="text-white bg-dark">PASSWORD</label>
+    <input type="password" name ="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <button type="submit" name="login" class="btn btn-primary">Enviar</button>
 </form>
-</div>
 
 </body>
 
