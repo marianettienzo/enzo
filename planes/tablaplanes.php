@@ -1,33 +1,23 @@
 <?php
-include("sesioncheck.php");
+include("../sesioncheck.php");
 include("./planes/planes.php");
-$config = include('con.php');
+$config = include('../config.php');
 
 ?>
 
-
 <html>
 <head>
-<?php include("navbar.php"); ?>
+<meta charser="utf-8">
     <title>Tabla</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet"  href="style.css" type="text/css"> 
-<meta charser="utf-8">
-
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-   <span class="navbar-toggler-icon"></span>
- </button>
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"  href="style.css" type="text/css"> 
 </head>
 <body>
+<?php include("../navbar.php"); ?>
+
 <br>
 <table class="table table-striped table-dark" border="1">  
      
@@ -37,7 +27,7 @@ $config = include('con.php');
 <td>     Plan          </td>
 <td>   Descripcion     </td>
 <td>   Precio          </td>
-<td> <a href="crear_form.php">Agregar  </td></a>
+<td> <a href="./crear_form.php">Agregar  </td></a>
 
 
 </td>

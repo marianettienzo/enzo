@@ -1,8 +1,5 @@
 <?php 
-include("sesioncheck.php");
-include("navbar.php");
-
-?>
+include("../sesioncheck.php");?>
 
 
 <html>
@@ -18,6 +15,7 @@ include("navbar.php");
 <meta charser="utf-8">
 </head>
 <body>
+<?php include("../navbar.php"); ?>
 
 
 <h1 id="h2"> Insertar nuevo usuario </h1>
