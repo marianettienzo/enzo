@@ -14,14 +14,17 @@
    
 <?php if ($objetoAuth->isLoggedIn()) { ?>
     <li class="nav-item">
-       <a class="nav-link" href="formulario.php">Formulario</a>
-     </li>
-<?php } ?>
-<?php if ($objetoAuth->isLoggedIn()) { ?>
-    <li class="nav-item">
        <a class="nav-link disabled" href="tabla.php">Tabla</a>
      </li>
 <?php } ?>
+
+<?php if ($objetoAuth->isLoggedIn()) { ?>
+    <li class="nav-item active">
+       <a class="nav-link" href="tablaplanes.php">Planes<span class="sr-only">(current)</span></a>
+     </li>
+<?php } ?>
+
+
 <?php if ($objetoAuth->isLoggedIn()) { ?>
     <li class="nav-item">
        <a class="nav-link" href="salir.php">Logout</a>
