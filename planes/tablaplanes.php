@@ -2,7 +2,6 @@
 include("../sesioncheck.php");
 include("./planes/planes.php");
 $config = include('../config.php');
-
 ?>
 
 <html>
@@ -32,10 +31,7 @@ $config = include('../config.php');
 
 </td>
 <?php
-
-
 for ($i=0; $i < count($usuarios); $i++) { 
-
 ?>
 <tr>
   <td>   </td>

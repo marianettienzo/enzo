@@ -15,8 +15,8 @@
 </head>
 <body id="body">
 <?php include("navbar.php");  ?>
-<p> Bienvenido! <?php echo $_SESSION['usuario']['email']; ?></p>
-<p> Usted ha sido registrado con éxito! </p>
+<p class="text-warning"> Bienvenido! <?php echo $_SESSION['usuario']['email']; ?></p>
+<p class="text-warning"> Usted ha sido registrado con éxito! </p>
    
 </body>
 

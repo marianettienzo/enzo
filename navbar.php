@@ -20,7 +20,7 @@
 
 <?php if ($objetoAuth->isLoggedIn()) { ?>
     <li class="nav-item active">
-       <a class="nav-link" href="tablaplanes.php">Planes<span class="sr-only">(current)</span></a>
+       <a class="nav-link" href="planes/tablaplanes.php">Planes<span class="sr-only">(current)</span></a>
      </li>
 <?php } ?>
 
