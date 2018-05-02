@@ -31,16 +31,15 @@ $usuarioDB = new Usuario($config['mysql']);
 
 </head>
 <body>
-
 <br>
-
-<table  class="table table-dark" style="position: center;"  border="1">
+<table class="table table-striped table-dark" border="1">  
+     
 <tr>  
 <td>   Id_usuario </td>  
 <td>   Nombre      </td>
 <td>   Email      </td>
-<td>   Password   </td>
 <td colspan="2">   Operaciones </td>
+<td> <a href="formulario.php">Agregar Usuario </td></a>
 
 
 </td>
@@ -54,9 +53,9 @@ for ($i=0; $i < count($usuarios); $i++) {
   <td> <?php echo $usuarios[$i]['id_usuario'] ?> </td>
   <td> <?php echo $usuarios[$i]['nombre'] ?> </td>
   <td> <?php echo $usuarios[$i]['email'] ?> </td>
-  <td> <?php echo $usuarios[$i]['pass'] ?> </td>
   <td> <a class="btn btn-primary" role="button"   href="modificar.php?id=<?php echo $usuarios[$i]['id_usuario']; ?>" > Modificar </a> </td>
-  <td> <a   class="btn btn-primary" role="button" href="eliminar.php?id=<?php echo $usuarios[$i]['id_usuario']; ?>" > Eliminar </a> </td>
+  <td> <a class="btn btn-primary" role="button" href="eliminar.php?id=<?php echo $usuarios[$i]['id_usuario']; ?>" > Eliminar </a> </td>
+  <td></td>
 </tr>
 <?php
 }
