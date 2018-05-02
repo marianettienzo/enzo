@@ -1,5 +1,4 @@
-<?php 
-include("../sesioncheck.php");?>
+<?php require(dirname(__FILE__). "/../sesioncheck.php"); ?>
 
 
 <html>
@@ -15,7 +14,7 @@ include("../sesioncheck.php");?>
 <meta charser="utf-8">
 </head>
 <body>
-<?php include("../navbar.php"); ?>
+<?php require(dirname(__FILE__). "/../navbar.php"); ?>
 
 
 <h1 id="h2"> Insertar nuevo usuario </h1>

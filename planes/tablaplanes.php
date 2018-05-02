@@ -1,7 +1,7 @@
 <?php
-include("../sesioncheck.php");
-include("./planes/planes.php");
-$config = include('../config.php');
+require(dirname(__FILE__). "/../sesioncheck.php");
+require(dirname(__FILE__). "/planes.php");
+$config = require(dirname(__FILE__). "/../config.php");
 ?>
 
 <html>
@@ -15,7 +15,7 @@ $config = include('../config.php');
     <link rel="stylesheet"  href="style.css" type="text/css"> 
 </head>
 <body>
-<?php include("../navbar.php"); ?>
+<?php require(dirname(__FILE__). "/../navbar.php"); ?>
 
 <br>
 <table class="table table-striped table-dark" border="1">  

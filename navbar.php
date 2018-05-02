@@ -14,7 +14,7 @@
    
 <?php if ($objetoAuth->isLoggedIn()) { ?>
     <li class="nav-item">
-       <a class="nav-link disabled" href="tabla.php">Tabla</a>
+       <a class="nav-link disabled" href="/tabla.php">Tabla</a>
      </li>
 <?php } ?>
 

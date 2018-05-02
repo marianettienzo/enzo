@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include("./services/Auth.php");
+require(dirname(__FILE__). "/services/Auth.php");
 $objetoAuth = new Auth($_SESSION);
 
 if(!$objetoAuth->isLoggedIn()) { 
