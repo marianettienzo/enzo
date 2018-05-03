@@ -1,46 +1,8 @@
-Mover Formulario a un boton dentro de tabla.php
-Eliminar menú Formulario de la barra de navegación
-Centrar formulario de login (index.php) -> Actualizar formulario
-Centrar contenido de mensaje_enviado.php
-Centrar formulario de registro de usuarios
-Leer sobre hash (encriptada) de passwords
+- Sacar los links de bootstrap, jquery, etc a un archivo comun e incluirlo en donde sea necesario.
+- Hacer funcion que reciba un nombre de controlador y accion y sepa donde buscarlo
+      routes.php?controller=CONTROLLER_NAME&action=ACTION_NAME
 
-password -> funcion de hash -> oaisjdaosijdoasidjoasid
+      - CONTROLLER_NAME: nombre del archivo del controlador o clase (SIN .php)
+      - ACTION_NAME: nombre del metodo del controlador o clase
 
-https://es.wikipedia.org/wiki/Cifrado_(criptograf%C3%ADa)
-
-http://php.net/manual/es/function.password-hash.php
-http://docs.php.net/manual/en/function.password-verify.php
-
-https://stackoverflow.com/questions/7307548/how-to-access-php-with-the-command-line-on-windows
-
-http://php.net/manual/es/reserved.variables.argv.php
-
-Crear clase Crypt que tenga 2 metodos, encrypt y verify 
-
-$string es una cadena de caracteres
-
-$crypt->encrypt($string);
-$crypt->verify($string, $hash);
-
-
-
-Pasos:
-
-- Eliminar todos los usuarios de la base de datos.
-- Crear clase Crypt.
-- Crear script para la linea de comandos que reciba un email y un password.
-    -> este script debe encriptar el password y luego guardarlo en la base de datos
-    -> uso php commands/create-user.php enzo@enzo.com password
-    Nota: verificar que php este en el PATH de windows
-
-- Crear script para eliminar un usuario de la base de datos, teniendo en cuenta el ID
-  -> uso php commands/delete-user.php ID
-  
-- Usar dicho script para crear un usuario "administrador"
-- Modificar login.php para que funcione con la nueva funcion de encriptar passwords
-- Probar que funcione
-- Modificar registro.php para que use la funcion de encriptar passwords
-- Probar que funcione (verificar que al guardar el nuevo usuario, este tenga el password encriptado en la base de datos)
-- Modificar modificar_progreso.php para que use la nueva funcion.
-- Modificar listar.php para que no incluya la columna password.
+      - Armar el PATH al archivo que deberia ejecutar y mostrar que metodo deberia ejecutar.
