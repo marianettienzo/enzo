@@ -1,8 +1,14 @@
 body {
-    background-color: rgb(160, 160, 160);
+    background-image: url("https://i.imgur.com/yDpuXU0.jpg");
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
     font-size: 13px;
 }
 
+p {
+    font-size: 20px;
+}
 #body {
     background-color: rgb(145, 144, 134);
     font-size: 13px;
@@ -23,10 +29,13 @@ body {
 
 h1 {
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    width: 900px;
+    margin: 0 auto;
     position: relative;
-    right: 580px;
-  font-size: 20px;
-  color: white;
+    top: 70px;
+	color: black;
+	margin-bottom: 100px;
+  font-size: 25px;
   text-align: center;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
@@ -59,9 +68,7 @@ td {
     right: 20px;
 }
 
-#body {
-    background-color: rgb(151, 237, 168); 
-}
+
 
 #formulario li {
     list-style-type:none;

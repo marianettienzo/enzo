@@ -23,7 +23,7 @@ class UsersController {
     }
 
 
-    public function modificar() {
+    public function obtener() {
 
         $id = $_GET['id'];
 
@@ -32,22 +32,33 @@ class UsersController {
         include dirname(__FILE__).'/../views/users/edit.php';
     }
 
-    public function editar() {
+    public function modificar() {
 
         $id = $_GET['id'];
-        $data = [
-            'nombre' => $_POST['nombre'],
-            'email' => $_POST['email'],
-            'pass' => $this->crypt->encrypt($_POST['pass'])
-          ];
 
         $resultado = $this->user->update($id, $data);
 
-        if ($resultado === false) {
-            echo "Actualizacion fallida";
-        }else{
-            header("Location: routes.php?controller=UsersController&action=list");
-        } 
+        include dirname(__FILE__).'/../planes/tablaplanes.php';
+
     }
+
+
+    public function eliminar() {
+
+        $id = $_GET['id'];
+
+        $resultado = $usuarioDB->delete($id);
+        
+        include dirname(__FILE__).'/../planes/tablaplanes.php';
+
+    }
+
+    public function guardar() {
+       
+          $resultado = $usuarioDB->save($data);
+        
+          include dirname(__FILE__).'/../planes/tablaplanes.php';
+            
+    } 
 
 }
