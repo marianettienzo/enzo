@@ -1,8 +1,0 @@
-- Sacar los links de bootstrap, jquery, etc a un archivo comun e incluirlo en donde sea necesario.
-- Hacer funcion que reciba un nombre de controlador y accion y sepa donde buscarlo
-      routes.php?controller=CONTROLLER_NAME&action=ACTION_NAME
-
-      - CONTROLLER_NAME: nombre del archivo del controlador o clase (SIN .php)
-      - ACTION_NAME: nombre del metodo del controlador o clase
-
-      - Armar el PATH al archivo que deberia ejecutar y mostrar que metodo deberia ejecutar.

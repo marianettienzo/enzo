@@ -1,0 +1,16 @@
+Crear un CRUD/ABM de autos
+    - QUE TENGA:
+        id
+        marca
+        modelo
+        nombre
+        descripcion
+        color
+        cantidad_de_puertas
+        es_nuevo
+
+
+Crear un CRUD/ABM de marcas de autos
+    id
+    nombre
+        

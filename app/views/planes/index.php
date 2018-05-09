@@ -2,7 +2,6 @@
 //include("sesioncheck.php");
 ?>
 
-
 <html>
 <head>
     <title>Tabla</title>
@@ -20,23 +19,25 @@
 <table class="table table-striped table-dark" border="1">  
      
 <tr>  
-<td>   Id_usuario </td>  
+<td>   Id </td>  
 <td>   Nombre      </td>
-<td>   Email      </td>
+<td>   Descripcion      </td>
+<td>   Precio     </td>
 <td colspan="2">   Operaciones </td>
-<td> <a href="index.php?controller=UsersController&action=formularioNuevo">Agregar Usuario </td></a>
+<td> <a href="index.php?controller=PlanesController&action=formularioNuevo">Agregar Plan </td></a>
 
 
 </td>
 <?php
-for ($i=0; $i < count($usuarios); $i++) { 
+for ($i=0; $i < count($planes); $i++) { 
 ?>
 <tr>
-  <td> <?php echo $usuarios[$i]['id_usuario'] ?> </td>
-  <td> <?php echo $usuarios[$i]['nombre'] ?> </td>
-  <td> <?php echo $usuarios[$i]['email'] ?> </td>
-  <td> <a class="btn btn-primary" role="button" href="index.php?controller=UsersController&action=formularioEditar&id=<?php echo $usuarios[$i]['id_usuario']; ?>" > Modificar </a> </td>
-  <td> <a class="btn btn-primary" role="button" href="index.php?controller=UsersController&action=eliminar&id=<?php echo $usuarios[$i]['id_usuario']; ?>" > Eliminar </a> </td>
+  <td> <?php echo $planes[$i]['id'] ?> </td>
+  <td> <?php echo $planes[$i]['nombre'] ?> </td>
+  <td> <?php echo $planes[$i]['descripcion'] ?> </td>
+  <td> <?php echo $planes[$i]['precio'] ?> </td>
+  <td> <a class="btn btn-primary" role="button" href="index.php?controller=PlanesController&action=formularioEditar&id=<?php echo $planes[$i]['id']; ?>" > Modificar </a> </td>
+  <td> <a class="btn btn-primary" role="button" href="index.php?controller=PlanesController&action=eliminar&id=<?php echo $planes[$i]['id']; ?>" > Eliminar </a> </td>
   <td></td>
 </tr>
 <?php

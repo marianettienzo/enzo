@@ -5,31 +5,19 @@
 
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav mr-auto">
-
- <?php if (!$objetoAuth->isLoggedIn()) { ?>
     <li class="nav-item active">
        <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
      </li>
-<?php } ?>
-   
-<?php if ($objetoAuth->isLoggedIn()) { ?>
     <li class="nav-item">
-       <a class="nav-link disabled" href="/tabla.php">Tabla</a>
+       <a class="nav-link disabled" href="index.php?controller=UsersController&action=list">Usuarios</a>
      </li>
-<?php } ?>
-
-<?php if ($objetoAuth->isLoggedIn()) { ?>
-    <li class="nav-item active">
-       <a class="nav-link" href="planes/tablaplanes.php">Planes<span class="sr-only">(current)</span></a>
+    <li class="nav-item">
+       <a class="nav-link" href="index.php?controller=PlanesController&action=list">Planes</a>
      </li>
-<?php } ?>
-
-
-<?php if ($objetoAuth->isLoggedIn()) { ?>
     <li class="nav-item">
        <a class="nav-link" href="salir.php">Logout</a>
      </li>
-<?php } ?>     
+   
    </ul>
  </div>
 </nav>

@@ -22,8 +22,23 @@ class UsersController {
         include dirname(__FILE__).'/../views/users/index.php';
     }
 
+    public function formularioNuevo() {      
+        include dirname(__FILE__).'/../views/users/save.php';
+    } 
 
-    public function obtener() {
+    public function guardar() {
+
+        $data = [
+            'nombre' => $_POST['nombre'],
+            'email' => $_POST['email'],
+            'pass' => $this->crypt->encrypt($_POST['pass'])
+        ];
+       
+        $resultado = $this->user->save($data);      
+        header('Location: index.php?controller=UsersController&action=list');
+    } 
+
+    public function formularioEditar() {
 
         $id = $_GET['id'];
 
@@ -35,30 +50,23 @@ class UsersController {
     public function modificar() {
 
         $id = $_GET['id'];
+        $data = [
+            'nombre' => $_POST['nombre'],
+            'email' => $_POST['email'],
+            'pass' => $this->crypt->encrypt($_POST['pass'])
+        ];
 
         $resultado = $this->user->update($id, $data);
-
-        include dirname(__FILE__).'/../planes/tablaplanes.php';
-
+        header('Location: index.php?controller=UsersController&action=list');
     }
 
-
-    public function eliminar() {
-
+    public function eliminar() {   
+            
         $id = $_GET['id'];
 
-        $resultado = $usuarioDB->delete($id);
-        
-        include dirname(__FILE__).'/../planes/tablaplanes.php';
-
+        $resultado = $this->user->delete($id);        
+        header('Location: index.php?controller=UsersController&action=list');
     }
 
-    public function guardar() {
-       
-          $resultado = $usuarioDB->save($data);
-        
-          include dirname(__FILE__).'/../planes/tablaplanes.php';
-            
-    } 
 
 }

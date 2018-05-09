@@ -14,11 +14,11 @@
 <body>
 <?php include("navbar.php"); ?>
 
-<form action="index.php?controller=UsersController&action=modificar&id=<?php echo $usuario['id_usuario']?>" method="POST">
+<form action="index.php?controller=PlanesController&action=modificar&id=<?php echo $plan['id']?>" method="POST">
   <ul id="formu">
-  <li> Nombre: <input type="text" name="nombre" required class="form-control" style="width : 250px; heigth : 0.5px"  value="<?php echo $usuario['nombre']?>"> </li>
-  <li> Email <input type="email" name="email" required class="form-control" style="width : 250px; heigth : 0.5px" value="<?php echo $usuario['email']?>"> </li>
-  <li> Password  <input type="password" name="pass" required class="form-control" style="width : 250px; heigth : 0.5px"  value="<?php echo $usuario['pass']?>"> </li>
+  <li> Nombre <input type="text" name="nombre" required class="form-control" style="width : 250px; heigth : 0.5px"  value="<?php echo $plan['nombre']?>"> </li>
+  <li> Descripcion <input type="text" name="descripcion" required class="form-control" style="width : 250px; heigth : 0.5px" value="<?php echo $plan['descripcion']?>"> </li>
+  <li> Precio  <input type="text" name="precio" required class="form-control" style="width : 250px; heigth : 0.5px"  value="<?php echo $plan['precio']?>"> </li>
   
   <input id="boton" type="submit"  class="btn btn-primary" name="enviar" value="Guardar" </li>
 
