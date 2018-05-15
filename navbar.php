@@ -14,6 +14,11 @@
     <li class="nav-item">
        <a class="nav-link" href="index.php?controller=PlanesController&action=list">Planes</a>
      </li>
+     <li class="nav-item">
+       <a class="nav-link" href="index.php?controller=AutosController&action=list">Autos</a>
+     </li>
+     <a class="nav-link" href="index.php?controller=MarcaController&action=list">Marca</a>
+     </li>
     <li class="nav-item">
        <a class="nav-link" href="salir.php">Logout</a>
      </li>
