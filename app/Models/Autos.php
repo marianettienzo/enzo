@@ -46,13 +46,13 @@ class Autos {
     /** ACTUALIZAR UN USUARIO POR SU ID */
     public function update($id, $data) {
         $stmt = $this->mysql->prepare("UPDATE autos SET marca = ?, modelo = ?, nombre = ?, descripcion = ?, color = ?, cantidad_de_puertas = ?,  es_nuevo = ? WHERE id = ?");
-        $stmt->bind_param("sssssisi", $data['marca'], $data['modelo'], $data['nombre'], $data['descripcion'], $data['color'],  $data['cantidad_de_puertas'],  $data['es_nuevo'], $id);
+        $stmt->bind_param("sssssssi", $data['marca'], $data['modelo'], $data['nombre'], $data['descripcion'], $data['color'],  $data['cantidad_de_puertas'],  $data['es_nuevo'], $id);
         return $stmt->execute();
     }
     /** GUARDAR UN NUEVO USUARIO */
     public function save($data) {
         $stmt = $this->mysql->prepare("INSERT INTO autos (id, marca, modelo, nombre, descripcion, color, cantidad_de_puertas, es_nuevo) VALUES (NULL , ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssis", $data['marca'], $data['modelo'],  $data['nombre'], $data['descripcion'], $data['color'],  $data['cantidad_de_puertas'],  $data['es_nuevo']);
+        $stmt->bind_param("sssssss", $data['marca'], $data['modelo'],  $data['nombre'], $data['descripcion'], $data['color'], $data['cantidad_de_puertas'],  $data['es_nuevo']);
         $result = $stmt->execute();
         if($stmt->error) {
             printf("Error: %s.\n", $stmt->error);        
