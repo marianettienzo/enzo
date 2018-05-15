@@ -24,7 +24,7 @@
 <li> Nombre <input type="text" name="nombre" required class="form-control" style="width : 250px; heigth : 0.5px"> </li>
 <li> Descripcion<input type="text" name="descripcion" required class="form-control" style="width : 250px; heigth : 0.5px">  </li>
 <li> Color <input type="text" name="color" required class="form-control" style="width : 250px; heigth : 0.5px">  </li>
-<li> Cantidad de Puertas <input type="cantidad_de_puertas" name="precio" required class="form-control" style="width : 250px; heigth : 0.5px">  </li>
+<li> Cantidad de Puertas <input type="cantidad_de_puertas" name="cantidad_de_puertas" required class="form-control" style="width : 250px; heigth : 0.5px">  </li>
 <li> Es Nuevo <input type="text" name="es_nuevo" required class="form-control" style="width : 250px; heigth : 0.5px">  </li>
  
 <input id="boton" type="submit" class="btn btn-primary btn-lg" name="enviar" value="Insertar"> </li>
